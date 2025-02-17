@@ -52,7 +52,8 @@ class TestFileStorageDocs(unittest.TestCase):
         pep8s = pep8.StyleGuide(quiet=True)
         result = pep8s.check_files(
             [
-                "tests/test_models/test_engine/test_file_storage.py"
+                "tests/test_models/test_engine/\
+test_file_storage.py"
             ]
         )
         self.assertEqual(
