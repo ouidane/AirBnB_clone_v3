@@ -51,8 +51,7 @@ class TestDBStorageDocs(unittest.TestCase):
         pep8s = pep8.StyleGuide(quiet=True)
         result = pep8s.check_files(
             [
-                "tests/test_models/test_engine/\
-test_db_storage.py"
+                "tests/test_models/test_engine/test_db_storage.py"
             ]
         )
         self.assertEqual(
