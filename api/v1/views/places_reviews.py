@@ -20,7 +20,7 @@ def get_reviews(place_id):
     reviews = []
     for review in place.reviews:
         reviews.append(review.to_dict())
-    return jsonify(reviews)
+    return jsonify(reviews), 200
 
 
 @app_views.route(
