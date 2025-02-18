@@ -13,7 +13,7 @@ def get_users():
     users = []
     for user in storage.all(User).values():
         users.append(user.to_dict())
-    return jsonify(users)
+    return jsonify(users), 200
 
 
 @app_views.route(
@@ -24,7 +24,7 @@ def get_user(user_id):
     user = storage.get(User, user_id)
     if user is None:
         abort(404)
-    return jsonify(user.to_dict())
+    return jsonify(user.to_dict()), 200
 
 
 @app_views.route(
@@ -37,7 +37,7 @@ def delete_user(user_id):
         abort(404)
     storage.delete(user)
     storage.save()
-    return jsonify({})
+    return jsonify({}), 200
 
 
 @app_views.route("/users", methods=["POST"], strict_slashes=False)
@@ -70,4 +70,4 @@ def update_user(user_id):
         if attr not in ["id", "created_at", "updated_at", "email"]:
             setattr(user, attr, val)
     user.save()
-    return jsonify(user.to_dict())
+    return jsonify(user.to_dict()), 200
