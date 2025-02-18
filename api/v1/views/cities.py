@@ -19,7 +19,7 @@ def get_cities(state_id):
     cities = []
     for city in state.cities:
         cities.append(city.to_dict())
-    return jsonify(cities)
+    return jsonify(cities), 200
 
 
 @app_views.route(
