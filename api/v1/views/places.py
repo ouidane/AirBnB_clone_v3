@@ -22,7 +22,7 @@ def get_places(city_id):
     places = []
     for place in city.places:
         places.append(place.to_dict())
-    return jsonify(places)
+    return jsonify(places), 200
 
 
 @app_views.route(
