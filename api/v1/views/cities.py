@@ -82,4 +82,4 @@ def update_city(city_id):
         if attr not in ["id", "created_at", "updated_at", "state_id"]:
             setattr(city, attr, val)
     city.save()
-    return jsonify(city.to_dict())
+    return jsonify(city.to_dict()), 200
