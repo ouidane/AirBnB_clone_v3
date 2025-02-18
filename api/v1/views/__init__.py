@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define the views for the API."""
+""" Initialise and define the views package for the API."""
 from flask import Blueprint
 
 app_views = Blueprint("app_views", __name__, url_prefix="/api/v1")
