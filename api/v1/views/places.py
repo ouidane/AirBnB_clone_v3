@@ -96,7 +96,7 @@ def update_place(place_id):
         ]:
             setattr(place, attr, val)
     place.save()
-    return jsonify(place.to_dict())
+    return jsonify(place.to_dict()), 200
 
 
 @app_views.route("/places_search", methods=["POST"], strict_slashes=False)
