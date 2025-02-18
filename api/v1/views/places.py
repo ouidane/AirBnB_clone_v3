@@ -35,7 +35,7 @@ def get_place(place_id):
     place = storage.get(Place, place_id)
     if place is None:
         abort(404)
-    return jsonify(place.to_dict())
+    return jsonify(place.to_dict()), 200
 
 
 @app_views.route(
