@@ -22,7 +22,7 @@ def get_place_amenities(place_id):
     amenities = []
     for amenity in place.amenities:
         amenities.append(amenity.to_dict())
-    return jsonify(amenities)
+    return jsonify(amenities), 200
 
 
 @app_views.route(
